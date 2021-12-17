@@ -1,0 +1,13 @@
+version: '3'
+services:
+  file-browser:
+    image: filebrowser/filebrowser
+    container_name: file-browser
+    ports:
+      - 8081:80
+    env_file:
+      - "./.env"
+    volumes:
+      - "${DATA_PATH}:/srv"
+      - "${DB_PATH}:/database.db"
+    restart: always
